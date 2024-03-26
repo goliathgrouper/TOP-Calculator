@@ -28,11 +28,12 @@ function operate(num1, oper, num2) {
 }
 
 const display = document.querySelector('.display');
-function display(displayValue) {
-    display.textContent = displayValue;
+function putOnDisplay(event) {
+    display.textContent += event.target.textContent;
 }
 
-
+document.querySelectorAll('.row > button')
+.forEach(btn => btn.addEventListener('click', putOnDisplay));
 
 let num1;
 let num2;
