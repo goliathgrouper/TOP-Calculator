@@ -27,6 +27,14 @@ function operate(num1, oper, num2) {
     }
 }
 
+const display = document.querySelector('.display');
+function display(displayValue) {
+    display.textContent = displayValue;
+}
+
+
+
 let num1;
 let num2;
 let oper;
+let displayValue;
