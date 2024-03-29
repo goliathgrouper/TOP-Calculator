@@ -43,6 +43,7 @@ function putOnDisplay(event) {
         num1 = '';
         num2 = '';
         display.textContent = '';
+        return;
     }
 
     if (oper === null && btnType == 'number') {
