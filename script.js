@@ -32,39 +32,49 @@ let num2 = '';
 let oper = null;
 let btnType = null;
 let btnVal = null;
+// First time flag
+let flag = true;
 
 const display = document.querySelector('.display');
 function putOnDisplay(event) {
     btnType = event.target.className;
     btnVal = event.target.textContent;
 
+    // Handle clear button
     if (btnType == 'clear') {
         oper = null;
         num1 = '';
         num2 = '';
         display.textContent = '';
+        flag = true;
+        return;
+    } else if (btnType === 'equal' && num2 === '') {
         return;
     }
 
-    if (oper === null && btnType == 'number') {
+    if (oper === null && flag && btnType === 'number') {   // Handle fist time
         num1 += btnVal;
         display.textContent += btnVal;
-    } else if (oper === null && btnType == 'operator') {
+    } else if (oper === null && btnType === 'operator' && num1 !== '') {
         oper = btnVal;
-        display.textContent += btnVal;
-    } else if (oper !== null && btnType == 'number') {
+        display.textContent += oper;
+    } else if (btnType === 'number' && oper !== null) {
         num2 += btnVal;
         display.textContent += btnVal;
-    } else if (['operator', 'equal'].includes(btnType)) {
-        num1 = operate(num1, oper, num2);
+    } 
+    if (btnType === 'equal') {
+        num1 = operate(num1, oper, num2).toString();
         display.textContent = num1;
-        num2 = '';
+        flag = false;
         oper = null;
+        num2 = '';
+    } else if (num2 !== '', btnType === 'operator') {
+        num1 = operate(num1, oper, num2).toString();
+        oper = btnVal;
+        display.textContent = num1+oper;
+        num2 = '';
     }
-
 }
 
 document.querySelectorAll('.row > button')
 .forEach(btn => btn.addEventListener('click', putOnDisplay));
-
-
