@@ -61,8 +61,7 @@ function putOnDisplay(event) {
     } else if (btnType === 'number' && oper !== null) {
         num2 += btnVal;
         display.textContent += btnVal;
-    } 
-    if (btnType === 'equal') {
+    } else if (btnType === 'equal') {
         num1 = operate(num1, oper, num2).toString();
         display.textContent = num1;
         flag = false;
