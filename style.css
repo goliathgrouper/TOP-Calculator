@@ -1,7 +1,11 @@
 body {
     display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 20px;
 }
-
 .container {
     display: flex;
     flex-direction: column;
@@ -17,8 +21,9 @@ body {
 }
 
 button {
-    width: 65px;
-    height: 65px;
+    width: 80px;
+    height: 80px;
+    font: inherit;
 }
 
 .row {
@@ -28,7 +33,7 @@ button {
 
 .display {
     padding: 10px;
-    height: 45px;
+    height: 60px;
     border: 1px solid black;
 }
 
