@@ -40,8 +40,8 @@ function putOnDisplay(event) {
     btnType = event.target.className;
     btnVal = event.target.textContent;
 
-    // Handle clear button
-    if (btnType == 'clear') {
+    // Handle clear button, premature equal and long inputs or results
+    if (btnType == 'clear' || display.textContent.length > 20) {
         oper = null;
         num1 = '';
         num2 = '';
@@ -51,7 +51,7 @@ function putOnDisplay(event) {
     } else if (btnType === 'equal' && num2 === '') {
         return;
     }
-
+    
     if (oper === null && flag && btnType === 'number') {   // Handle fist time
         num1 += btnVal;
         display.textContent += btnVal;
