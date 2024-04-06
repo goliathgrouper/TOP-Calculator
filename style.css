@@ -10,11 +10,11 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    border: 1px double black;
     padding: 20px;
     gap: 10px;
     background-color: rgb(45, 50, 116);
     border-radius: 5px;
+    box-shadow: 3px 3px;
 }
 
 .buttons {
@@ -28,7 +28,8 @@ button {
     height: 80px;
     font: inherit;
     border-radius: 5px;
-    border-color:rgb(33, 39, 48);
+    border-color:rgb(45, 50, 116);
+    box-shadow: 1px 1px;
 }
 
 .row {
@@ -39,13 +40,13 @@ button {
 .display {
     padding: 10px;
     height: 60px;
-    border: 1px solid black;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     background-color: rgb(214, 214, 214);
     border-radius: 5px;
     font-size: 24px;
+    box-shadow: 3px 3px;
 }
 
 .number:hover {
