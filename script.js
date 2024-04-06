@@ -45,11 +45,15 @@ function putOnDisplay(event) {
 
     // Handle clear button, premature equal and long inputs or results
     if (btnType == 'clear' || display.textContent.length > 20) {
+        if (display.textContent.length > 20) {
+            alert('Too much');
+        }
         oper = null;
         num1 = '';
         num2 = '';
         display.textContent = '';
         flag = true;
+        
         return;
     } else if (btnType === 'equal' && num2 === '') {
         return;
