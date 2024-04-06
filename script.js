@@ -23,6 +23,9 @@ function operate(num1, oper, num2) {
         case 'x':
             return multiply(+num1, +num2);
         case '/':
+            if (divide(+num1, +num2) === Infinity) {
+                return 'Just don\'t'
+            }
             return divide(+num1, +num2);
     }
 }
