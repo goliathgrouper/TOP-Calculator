@@ -51,8 +51,11 @@ function putOnDisplay(event) {
     } else if (btnType === 'equal' && num2 === '') {
         return;
     }
-    
-    if (oper === null && flag && btnType === 'number') {   // Handle fist time
+    if (oper === null && !(flag) && btnType === 'number') {  // Handle number input after getting answer
+        num1 = btnVal;
+        display.textContent = num1;
+        flag = true;
+    } else if (oper === null && flag && btnType === 'number') {   // Handle fist time
         num1 += btnVal;
         display.textContent += btnVal;
     } else if (oper === null && btnType === 'operator' && num1 !== '') {
